@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            width: 100%;
+        }
+        table, td, th {
+            border: 1px solid #86cc9a;
+        }
+    </style>
+    <link rel="stylesheet" href="web/backend/table.css" />
+</head>
+<body>
+<table class="table">
+    <tr>
+        <th>编号</th>
+        <th>产品名字</th>
+        <th>操作</th>
+    </tr>
+    <?php foreach($products as $product) { ?>
+    <tr>
+        <td><?php echo $product['pro_id'] ?></td>
+        <td><?php echo $product['pro_name'] ?></td>
+        <td>
+            <a href="?p=backend&c=Product&a=delete&id=<?php echo $product['pro_id'] ?>">删除</a>
+        </td>
+    </tr>
+    <?php } ?>
+</table>
+<p>总计有 <?php echo $productCount ?> 个产品</p>
+</body>
+</html>
